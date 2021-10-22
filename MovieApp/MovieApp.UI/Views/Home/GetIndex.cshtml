@@ -1,0 +1,163 @@
+﻿@model MovieApp.Service.Models.Movy
+@{
+    ViewData["Title"] = "GetIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*ıd mızın geldigi yeri tanımlıyoruz aslında list kullnaıyorduk ıd mız tekıl oldugu için list tanımlamıyoruz *@
+
+
+@section CSS{
+    <link href="~/html/css/plugins.css" rel="stylesheet" />
+    <link href="~/html/css/style.css" rel="stylesheet" />
+}
+
+<body>
+    <div class="hero mv-single-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-single movie-single movie_single">
+        <div class="container">
+            <div class="row ipad-width2">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="movie-img sticky-sb">
+                        <img src="@Model.MovieImage" alt="">
+                        <div class="movie-btn">
+                            <div class="btn-transform transform-vertical red">
+                                <div><a href="@Model.MovieVideo" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Movie</a></div>
+                                <div><a href="@Model.MovieVideo" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="movie-single-ct main-content">
+                        <h1 class="bd-hd">@Model.MovieTitle   <span>@Model.MovieYear</span></h1>
+
+                        <div class="movie-tabs">
+                            <div class="tabs">
+                                <ul class="tab-links tabs-mv">
+                                    <li class="active"><a href="#overview">Overview</a></li>
+                                    <li><a href="#reviews"> Reviews</a></li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="overview" class="tab active">
+                                        <div class="row">
+                                            <div class="col-md-8 col-sm-12 col-xs-12">
+                                                <p> @Model.MovieDescription</p>
+                                            </div>
+
+                                            <br />
+                                            <div class="col-md-4 col-xs-12 col-sm-12">
+                                                <div class="sb-it">
+                                                    <h6>Director: </h6>
+                                                    <p><a href="#">@Model.MovieDirector</a></p>
+                                                </div>
+                                                <div class="sb-it">
+                                                    <h6>Writer: </h6>
+                                                    <p><a href="#">@Model.MovieWriter</a></p>
+                                                </div>
+                                                <div class="sb-it">
+                                                    <h6>Stars: </h6>
+                                                    @foreach (var item in Model.Actors)@*modelden actors tablosundan veri aldık *@
+                                                    {
+                                                        <p><a href="#">@item.Name</a> </p> @*name bilgisini veriyor*@
+                                                    }
+
+                                                </div>
+
+                                                <div class="sb-it">
+                                                    <h6>Release Date:</h6>
+                                                    <p>@Model.MovieYear</p>
+                                                </div>
+                                                <div class="sb-it">
+                                                    <h6>Run Time:</h6>
+                                                    <p>@Model.MovieTime</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <video controls="controls" style="border-radius: 90px; background: #000;">
+                                        <source src="@Model.MovieVideo" type="video/mp4" style="width:500px;height:500px;" />
+                                    </video>
+                                @*<iframe width="560"
+                height="315"
+                src="@Model.MovieVideo"
+                frameborder="0"
+                allowfullscreen>
+        </iframe>*@
+
+                                <div id="reviews" class="tab review">
+                                    <div class="row">
+                                        <div class="rv-hd">
+                                            <ul class="tab-links tabs-mv" style="margin-left:20px;">
+                                                <li class="active"><a href="/Home/GetIndex/@Model.Id">Overview</a></li>
+                                                <li><a href="#reviews"> Reviews</a></li>
+                                            </ul>
+                                        </div>
+
+                                        @using (Html.BeginForm("Ekle", "Home", FormMethod.Post))
+                                        {
+                                            <input type="text" name="MovieId" id="MovieId" value="@Model.Id" style="display:none; margin-left:15px;" />
+
+                                            <input type="text" class="form-control" name="GuestName" id="GuestName" placeholder="Kullanıcı Adı" style=" margin-left: 15px; width: 550px; border-radius: 90px; background: #000; " />
+                                            <br />
+                                            <input type="text" class="form-control" name="GuestMail" id="GuestMail" placeholder="Kullanıcı Mail" style=" margin-left: 15px; width: 550px; border-radius: 90px; background: #000;" />
+                                            <br />
+                                            <input type="text" class="form-control" name="commentTitle" id="commentTitle" placeholder="Başlık Giriniz" style=" margin-left: 15px; width: 550px; border-radius: 90px; background: #000;" />
+                                            <br />
+                                            <input type="text" class="form-control" name="comment1" id="comment1" placeholder="Yorumunuz" style=" margin-left: 15px; width: 550px; height: 50px; border-radius: 90px; background: #000;" />
+
+                                            <br />
+                                            <button class="btn btn-info btn-danger" type="submit" style=" margin-left: 15px; border-radius: 10px;"><b>Yeni Yorum Ekle</b></button>
+                                        }
+
+                                        @foreach (var item in Model.comments)
+                                        {
+                                            <div class="mv-user-review-item" style="margin-left:15px;">
+                                                <div class="user-infor">
+                                                    <img src="/images/users.jpg" alt="">
+                                                    <div>
+                                                        <h3>@item.commentTitle</h3>
+
+                                                        <p class="time">
+                                                            @item.commentTime.Date.ToString("dd-MM-yyyy")
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                                <p>@item.comment1 </p>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end of footer section-->
+
+    @section script
+    {
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+
+        <script src="~/html/js/plugins.js"></script>
+        <script src="~/html/js/plugins2.js"></script>
+        <script src="~/html/js/custom.js"></script>
+    }
+
+
+</body>
