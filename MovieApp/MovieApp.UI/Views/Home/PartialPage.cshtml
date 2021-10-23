@@ -1,0 +1,18 @@
+﻿@model List<MovieApp.Service.Models.Movy>
+
+<div class="top-search">
+
+    @using (Html.BeginForm("PartialPage", "Home", FormMethod.Get))
+    {
+
+
+        <button type="submit" style="border: 3px solid #000000; background-color: #2d4862; text-align: center; color: #fff; width: 1169px;height:40px;"><b>Film Ara</b></button>
+        @Html.TextBox("p")
+        @*<input placeholder="Search for a movie, TV Show or celebrity that you are looking for" style="color: #000000; border: 3px; background:#2d4862;" />*@
+
+
+    }
+
+
+</div>
+
