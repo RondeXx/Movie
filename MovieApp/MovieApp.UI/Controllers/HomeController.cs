@@ -17,23 +17,23 @@ namespace MovieApp.UI.Controllers
         {
             _context = context;
         }
-            public IActionResult PartialPage(string p)
+        public IActionResult PartialPage(string p)
         {
 
-            var values = from d in _context.Movies select d;
-            if (!string.IsNullOrEmpty(p))
+            var values = from d in _context.Movies select d;           //sql sorgusu olmadan olurmu nasıl olur?
+            if (!string.IsNullOrEmpty(p)) //p den gelen boş mu kontrolü
             {
-                values = values.Where(x => x.MovieTitle.Contains(p));
+                values = values.Where(x => x.MovieTitle.Contains(p));  //film başlıklarında p den gelen deger var ise listele
             }
 
-            return PartialView("Index",values.ToList());
+            return PartialView("Index", values.ToList()); //values den gelenleri listele ve index de göster
         }
         public IActionResult Index()
         {
-           
+
             var result = _context.Movies.ToList();
 
-            
+
 
             return View(result);
         }
@@ -48,7 +48,7 @@ namespace MovieApp.UI.Controllers
 
             return View(res); //ekrana dönsün dedik
         }
-        
+
 
         [HttpPost]
         public IActionResult Ekle(comment c, Guest g) //tablomuzdan model adında parametre çağırıyoruz
