@@ -20,13 +20,14 @@ namespace MovieApp.UI.Controllers
         public IActionResult PartialPage(string p)
         {
 
-            var values = from d in _context.Movies select d;           //sql sorgusu olmadan olurmu nasıl olur?
+            var values = _context.Movies.ToList();           //sql sorgusu olmadan olurmu nasıl olur?
             if (!string.IsNullOrEmpty(p)) //p den gelen boş mu kontrolü
             {
-                values = values.Where(x => x.MovieTitle.Contains(p));  //film başlıklarında p den gelen deger var ise listele
-            }
+                values = values.Where(x => x.MovieTitle.ToLower().Contains(p.ToLower())).ToList();  //film başlıklarında p den gelen deger var ise listele
+                //ToLower hepsini küçült ve p.ToLower p den gelenleri küçült araştır harf karışıklıgını önlemek için 
+            }            
 
-            return PartialView("Index", values.ToList()); //values den gelenleri listele ve index de göster
+            return PartialView("Index", values); //values den gelenleri listele ve index de göster
         }
         public IActionResult Index()
         {

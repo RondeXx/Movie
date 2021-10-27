@@ -1,18 +1,16 @@
-﻿@model List<MovieApp.Service.Models.Movy>
-
-<div class="top-search">
-
-    @using (Html.BeginForm("PartialPage", "Home", FormMethod.Get))  //formumuz bir etkileşime giriyor post mu get mi olunca yapıcak nerde gelicek bilgiler bunları belirliyoruz deger döndürdügümüz için şart
-    {
+﻿
 
 
-        <button type="submit" style="border: 3px solid #000000; background-color: #2d4862; text-align: center; color: #fff; width: 1169px;height:40px;"><b>Film Ara</b></button>
-        @Html.TextBox("p") //text box yaratıyoruz ve buna girilen degerleri p içine at diyoruz bi nebi
-        @*<input placeholder="Search for a movie, TV Show or celebrity that you are looking for" style="color: #000000; border: 3px; background:#2d4862;" />*@
+@using (Html.BeginForm("PartialPage", "Home", FormMethod.Get))
+//formumuz bir etkileşime giriyor post mu get mi olunca yapıcak nerde gelicek bilgiler bunları belirliyoruz deger döndürdügümüz için şart
+{
 
 
-    }
+    <div class="top-search">
+        @*//name deki p parametresi controllerdan gelen p paramatresi*@ 
+        <input type="text" name="p" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
 
-
-</div>
+        <button type="submit" style="background-color: #2d4862; color: #fff; width: 80px;height:46px;"><b>Film Ara</b></button>
+    </div>
+}
 
