@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
+using System.Net;
+using System.Net.Mail;
 
 namespace MovieApp.UI.Controllers
 {
@@ -25,7 +28,7 @@ namespace MovieApp.UI.Controllers
             {
                 values = values.Where(x => x.MovieTitle.ToLower().Contains(p.ToLower())).ToList();  //film başlıklarında p den gelen deger var ise listele
                 //ToLower hepsini küçült ve p.ToLower p den gelenleri küçült araştır harf karışıklıgını önlemek için 
-            }            
+            }
 
             return PartialView("Index", values); //values den gelenleri listele ve index de göster
         }
@@ -70,8 +73,53 @@ namespace MovieApp.UI.Controllers
 
             return RedirectToAction("GetIndex", new { Id = c.MovieId });
         }                                           //GetIndex deki Id parametresini buraya çagırıyoruz
+        public IActionResult Help()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Help(ContactForm p)
+        {
+
+            var receiverMail = new MailAddress("edaokyay@vakifglobal.com", p.ContactName);
+            var smtp = new SmtpClient
+            {
+                Host = "mail.vakifglobal.com",
+                Port = 587,
+                EnableSsl = false,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential("edaokyay@vakifglobal.com", "DEneme1214.")
+            };
+            using (var mess = new MailMessage()
+            {
+                From = receiverMail,
+                Subject = p.ContactSubject,
+                IsBodyHtml = true,
+                Body =p.ContactMessage,
+
+                
+                //Attachments = "" dosya eklemek 
+            })
+            {
+                mess.To.Add(p.ContactMail);
+                mess.CC.Add("edaokyay@vakifglobal.com");
+                smtp.Send(mess);
+            }
+
+           
+            _context.ContactForms.Add(p);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
+        }
 
 
     }
-
 }
+
+
+
+
+

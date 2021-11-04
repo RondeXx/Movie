@@ -60,6 +60,9 @@
     <Compile Include="Models\comment.cs">
       <DependentUpon>MovieAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactForm.cs">
+      <DependentUpon>MovieAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Guest.cs">
       <DependentUpon>MovieAppModel.tt</DependentUpon>
     </Compile>

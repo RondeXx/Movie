@@ -5658,8 +5658,9 @@ ul {
 }
 /*movie single hero*/
 .mv-single-hero {
-  background: url('../images/uploads/hero-bg.jpg') no-repeat;
-  height: 598px;
+  background: url('../../images/add.jpg') no-repeat;
+ width:auto;
+ height:auto;
 }
 /*series single hero*/
 .sr-single-hero {
@@ -5671,15 +5672,15 @@ ul {
   height: 538px;
 }
 .common-hero {
-  height: 385px;
-  background: url('../images/uploads/user-hero-bg.jpg') no-repeat;
+    height: 385px;
+    background: url('../../images/add.jpg') no-repeat;
 }
 .common-hero:before {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .user-hero {
-  height: 385px;
-  background: url('../images/uploads/user-hero-bg.jpg') no-repeat;
+    height: 385px;
+    background: url('../../images/add.jpg') no-repeat;
 }
 .user-hero .hero-ct {
   padding-top: 225px;
@@ -5711,10 +5712,10 @@ ul {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .landing-hero {
-  background-image: url('../images/uploads/user-hero-bg.jpg');
-  box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  padding: 110px 0;
+    background-image: url('../../images/aac.jpg');
+    box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 110px 0;
 }
 .landing-hero .landing-hero-text {
   margin: 120px 0;
@@ -7046,7 +7047,7 @@ p.ceb-single {
   background-color: #00b9ef;
 }
 .slider {
-  background: url('../images/uploads/slider-bg.jpg') no-repeat;
+  background: url('../../images/add.jpg') no-repeat;
   background-position: center;
   text-align: center;
   background-size: cover;
@@ -7131,7 +7132,7 @@ p.ceb-single {
   text-align: right;
 }
 .sliderv2 {
-  background: url('../images/uploads/slider-bg2.jpg') no-repeat;
+  background: url('../../images/add.jpg') no-repeat;
   padding-bottom: 0;
   padding-top: 180px;
   overflow: hidden;

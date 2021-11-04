@@ -30,6 +30,16 @@
           <Property Name="GuestId" Type="int" Nullable="false" />
           <Property Name="MovieId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="ContactForms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContactMail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactSubject" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactMessage" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Guest">
           <Key>
             <PropertyRef Name="Id" />
@@ -196,6 +206,7 @@
           <EntitySet Name="Actors" EntityType="Self.Actors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="comments" EntityType="Self.comments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactForms" EntityType="Self.ContactForms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MovieActors" EntityType="Self.MovieActors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MovieCategories" EntityType="Self.MovieCategories" Schema="dbo" store:Type="Tables" />
@@ -244,6 +255,7 @@
           <EntitySet Name="Actors" EntityType="MovieAppModel.Actor" />
           <EntitySet Name="Categories" EntityType="MovieAppModel.Category" />
           <EntitySet Name="comments" EntityType="MovieAppModel.comment" />
+          <EntitySet Name="ContactForms" EntityType="MovieAppModel.ContactForm" />
           <EntitySet Name="Guests" EntityType="MovieAppModel.Guest" />
           <EntitySet Name="Movies" EntityType="MovieAppModel.Movy" />
           <EntitySet Name="News" EntityType="MovieAppModel.News" />
@@ -298,6 +310,16 @@
           <NavigationProperty Name="Guest" Relationship="MovieAppModel.FK_comments_Guest" FromRole="comment" ToRole="Guest" />
           <NavigationProperty Name="Movy" Relationship="MovieAppModel.FK_comments_Movies" FromRole="comment" ToRole="Movy" />
           <NavigationProperty Name="Guests" Relationship="MovieAppModel.UserComments" FromRole="comment" ToRole="Guest" />
+        </EntityType>
+        <EntityType Name="ContactForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactMail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactSubject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactMessage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Guest">
           <Key>
@@ -412,6 +434,17 @@
                 <ScalarProperty Name="commentTime" ColumnName="commentTime" />
                 <ScalarProperty Name="comment1" ColumnName="comment" />
                 <ScalarProperty Name="commentTitle" ColumnName="commentTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactForms">
+            <EntityTypeMapping TypeName="MovieAppModel.ContactForm">
+              <MappingFragment StoreEntitySet="ContactForms">
+                <ScalarProperty Name="ContactMessage" ColumnName="ContactMessage" />
+                <ScalarProperty Name="ContactSubject" ColumnName="ContactSubject" />
+                <ScalarProperty Name="ContactMail" ColumnName="ContactMail" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

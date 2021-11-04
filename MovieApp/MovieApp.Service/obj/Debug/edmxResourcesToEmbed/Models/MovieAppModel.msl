@@ -29,6 +29,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ContactForms">
+      <EntityTypeMapping TypeName="MovieAppModel.ContactForm">
+        <MappingFragment StoreEntitySet="ContactForms">
+          <ScalarProperty Name="ContactMessage" ColumnName="ContactMessage" />
+          <ScalarProperty Name="ContactSubject" ColumnName="ContactSubject" />
+          <ScalarProperty Name="ContactMail" ColumnName="ContactMail" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Guests">
       <EntityTypeMapping TypeName="MovieAppModel.Guest">
         <MappingFragment StoreEntitySet="Guest">

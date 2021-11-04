@@ -25,6 +25,16 @@
     <Property Name="GuestId" Type="int" Nullable="false" />
     <Property Name="MovieId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="ContactForms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactMail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactSubject" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactMessage" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Guest">
     <Key>
       <PropertyRef Name="Id" />
@@ -191,6 +201,7 @@
     <EntitySet Name="Actors" EntityType="Self.Actors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="comments" EntityType="Self.comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactForms" EntityType="Self.ContactForms" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MovieActors" EntityType="Self.MovieActors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MovieCategories" EntityType="Self.MovieCategories" Schema="dbo" store:Type="Tables" />

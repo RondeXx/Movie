@@ -10,3 +10,15 @@ C:\Users\Vakıf Global\source\repos\MovieApp\MovieApp.Service\obj\Debug\MovieApp
 C:\Users\Vakıf Global\source\repos\MovieApp\MovieApp.Service\obj\Debug\MovieApp.Service.dll
 C:\Users\Vakıf Global\source\repos\MovieApp\MovieApp.Service\obj\Debug\MovieApp.Service.pdb
 C:\Users\Vakıf Global\source\repos\MovieApp\MovieApp.Service\obj\Debug\MovieApp.Service.csproj.AssemblyReference.cache
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\bin\Debug\MovieApp.Service.dll.config
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\bin\Debug\MovieApp.Service.dll
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\bin\Debug\MovieApp.Service.pdb
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\bin\Debug\EntityFramework.dll
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\bin\Debug\EntityFramework.xml
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\obj\Debug\MovieApp.Service.csproj.AssemblyReference.cache
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\obj\Debug\MovieApp.Service.csproj.CoreCompileInputs.cache
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\obj\Debug\MovieApp.Service.csproj.CopyComplete
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\obj\Debug\MovieApp.Service.dll
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.Service\obj\Debug\MovieApp.Service.pdb

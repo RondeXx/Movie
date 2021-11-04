@@ -4,6 +4,7 @@
     <EntitySet Name="Actors" EntityType="MovieAppModel.Actor" />
     <EntitySet Name="Categories" EntityType="MovieAppModel.Category" />
     <EntitySet Name="comments" EntityType="MovieAppModel.comment" />
+    <EntitySet Name="ContactForms" EntityType="MovieAppModel.ContactForm" />
     <EntitySet Name="Guests" EntityType="MovieAppModel.Guest" />
     <EntitySet Name="Movies" EntityType="MovieAppModel.Movy" />
     <EntitySet Name="News" EntityType="MovieAppModel.News" />
@@ -58,6 +59,16 @@
     <NavigationProperty Name="Guest" Relationship="MovieAppModel.FK_comments_Guest" FromRole="comment" ToRole="Guest" />
     <NavigationProperty Name="Movy" Relationship="MovieAppModel.FK_comments_Movies" FromRole="comment" ToRole="Movy" />
     <NavigationProperty Name="Guests" Relationship="MovieAppModel.UserComments" FromRole="comment" ToRole="Guest" />
+  </EntityType>
+  <EntityType Name="ContactForm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactMail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactSubject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactMessage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Guest">
     <Key>
