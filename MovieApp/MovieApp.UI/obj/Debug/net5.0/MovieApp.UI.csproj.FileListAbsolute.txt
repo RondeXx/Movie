@@ -297,9 +297,15 @@ C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.TagHelpers.input.cache
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.TagHelpers.output.cache
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.RazorCoreGenerate.cache
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Admin\Edit.cshtml.g.cs
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Admin\List.cshtml.g.cs
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Home\GetIndex.cshtml.g.cs
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Home\Help.cshtml.g.cs
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Home\PartialPage.cshtml.g.cs
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Shared\_Layout2.cshtml.g.cs
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.RazorTargetAssemblyInfo.cache
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.RazorTargetAssemblyInfo.cs
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.Views.pdb
@@ -308,5 +314,3 @@ C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\ref\MovieApp.UI.dll
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.pdb
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.genruntimeconfig.cache
-C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Home\PartialPage.cshtml.g.cs
-C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Home\Help.cshtml.g.cs

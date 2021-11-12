@@ -6,6 +6,9 @@
  * Copyright (c) 2017 Jörn Zaefferer
  * Released under the MIT license
  */
+
+
+
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "./jquery.validate"], factory );
@@ -26,7 +29,9 @@
 		// Remove punctuation
 		.replace( /[.(),;:!?%#$'\"_+=\/\-“”’]*/g, "" );
 	}
-
+	$(document).ready(function () {
+		$('#example').DataTable();
+	});
 	$.validator.addMethod( "maxWords", function( value, element, params ) {
 		return this.optional( element ) || stripHtml( value ).match( /\b\w+\b/g ).length <= params;
 	}, $.validator.format( "Please enter {0} words or less." ) );

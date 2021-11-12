@@ -1,0 +1,32 @@
+﻿@model MovieApp.Service.Models.Movy
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<form action="/Admin/Edit" method="post">
+    @Html.HiddenFor(x=>x.Id)
+    Id:<input type="text" class="form-control" value="@Model.Id" disabled />
+    <br />
+    MovieWriter:<input type="text" name="MovieWriter" id="MovieWriter" class="form-control" value="@Model.MovieWriter" />
+    <br />
+    MovieDirector:<input type="text" name="MovieDirector" id="MovieDirector" class="form-control" value="@Model.MovieDirector" />
+    <br />
+    MovieImage:<input type="text" name="MovieImage" id="MovieImage" class="form-control" value="@Model.MovieImage" />
+    <br />
+    MovieVideo:<input type="text" name="MovieVideo" id="MovieVideo" class="form-control" value="@Model.MovieVideo" />
+    <br />
+    MovieTime:<input type="text" name="MovieTime" id="MovieTime" class="form-control" value="@Model.MovieTime" />
+    <br />
+    MovieYear:<input type="text" name="MovieYear" id="MovieYear" class="form-control" value="@Model.MovieYear" />
+    <br />
+    MovieTitle:<input type="text" name="MovieTitle" id="MovieTitle" class="form-control" value="@Model.MovieTitle" />
+    <br />
+    MovieDescription:<textarea name="MovieDescription" id="MovieDescription" class="form-control" rows="3" value="">@Model.MovieDescription</textarea>
+    <br />
+
+
+    <button type="submit" value="Update" class="btn btn-info"></button>
+
+</form> 
+ 
