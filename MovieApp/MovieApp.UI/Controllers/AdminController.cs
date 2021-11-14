@@ -43,7 +43,7 @@ namespace MovieApp.UI.Controllers
             return View(result);
         }
         [HttpPost]
-        public IActionResult Edit(Movy movie, int Id)
+        public IActionResult Edit(Movy movie)
         {
             _context.Entry(movie).State = EntityState.Modified; //Entities modified update
             _context.SaveChanges();
@@ -55,12 +55,18 @@ namespace MovieApp.UI.Controllers
             var result = _context.Movies.Find(Id);
             return View(result);
         }
+        
+        public IActionResult Add()
+        {
+                
+            return View();
+        }
         [HttpPost]
         public IActionResult Add(Movy model)
         {
             _context.Movies.Add(model);
             _context.SaveChanges();
-            return RedirectToAction("Edit");
+            return RedirectToAction("List");
         }
     }
 }

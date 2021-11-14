@@ -1,0 +1,29 @@
+﻿@model MovieApp.Service.Models.Movy
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<form action="/Admin/Add" method="post">
+    <br />
+    MovieWriter:<input type="text" name="MovieWriter" id="MovieWriter" class="form-control" value="" />
+    <br />
+    MovieDirector:<input type="text" name="MovieDirector" id="MovieDirector" class="form-control" value="" />
+    <br />
+    MovieImage:<input type="text" name="MovieImage" id="MovieImage" class="form-control" value="" />
+    <br />
+    MovieVideo:<input type="text" name="MovieVideo" id="MovieVideo" class="form-control" value="" />
+    <br />
+    MovieTime:<input type="text" name="MovieTime" id="MovieTime" class="form-control" value="" />
+    <br />
+    MovieYear:<input type="text" name="MovieYear" id="MovieYear" class="form-control" value="" />
+    <br />
+    MovieTitle:<input type="text" name="MovieTitle" id="MovieTitle" class="form-control" value="" />
+    <br />
+    MovieDescription:<textarea name="MovieDescription" id="MovieDescription" class="form-control" rows="3" value=""></textarea>
+    <br />
+
+
+    <button type="submit" value="Update" class="btn btn-info">Update</button>
+
+</form>
