@@ -1,7 +1,51 @@
-﻿@{
-    ViewData["Title"] = "AdminPanel";
-    Layout = "~/Views/Shared/_Layout2.cshtml";
-}
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Admin Panel Login</title>
+        <!-- Required meta tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="au theme template">
+        <meta name="author" content="Hau Nguyen">
+        <meta name="keywords" content="au theme template">
+
+        <!-- Title Page-->
+        <title>AdminPanel</title>
+
+        <!-- Fontfaces CSS-->
+        <link href="~/Admin/css/font-face.css" rel="stylesheet" media="all" />
+        <link href="~/Admin/vendor/font-awesome-4.7/css/font-awesome.css" rel="stylesheet" media="all" />
+        <link href="~/Admin/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+        <link href="~/Admin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+        <!-- Bootstrap CSS-->
+        <link href="~/Admin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+        <!-- Vendor CSS-->
+
+        <link href="~/Admin/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+        <link href="~/Admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+        <link href="~/Admin/vendor/wow/animate.css" rel="stylesheet" media="all">
+        <link href="~/Admin/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+        <link href="~/Admin/vendor/slick/slick.css" rel="stylesheet" media="all">
+        <link href="~/Admin/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+        <link href="~/Admin/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+        <!-- Main CSS-->
+        <link href="~/Admin/css/theme.css" rel="stylesheet" media="all">
+
+</head>
+<body style="background:#e8a240">
+    <h1 style="text-align:center;">Sade ADMİN Panel Girişi</h1>
 
 
-<h1>asas</h1>
+
+
+    <form action="/Admin/Index" method="post">
+
+        <input type="text" name="name" placeholder="Lütfen kullanıcı adınızı giriniz." class="form-control" style="width:300px; margin:100px 0 5px 530px;" />
+        <input type="password" name="password" placeholder="Lütfen şifrenizi  giriniz." class="form-control" style="width:300px; margin:10px 0 5px 530px; " />
+        <input type="submit" name="button" value="Giriş Yap" class="btn btn-info" style="margin-left:635px;"/>
+
+    </form>
+</body>
+</html>

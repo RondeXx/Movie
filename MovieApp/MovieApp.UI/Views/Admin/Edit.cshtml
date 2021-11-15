@@ -5,16 +5,16 @@
 }
 
 <form action="/Admin/Edit" method="post">
-    @Html.HiddenFor(x=>x.Id)
+    @Html.HiddenFor(x => x.Id)
     Id:<input type="text" class="form-control" value="@Model.Id" disabled />
     <br />
     MovieWriter:<input type="text" name="MovieWriter" id="MovieWriter" class="form-control" value="@Model.MovieWriter" />
     <br />
     MovieDirector:<input type="text" name="MovieDirector" id="MovieDirector" class="form-control" value="@Model.MovieDirector" />
     <br />
-    MovieImage:<input type="text" name="MovieImage" id="MovieImage" class="form-control" value="@Model.MovieImage" />
+    MovieImage:<input type="file" name="image" id="image" />
     <br />
-    MovieVideo:<input type="text" name="MovieVideo" id="MovieVideo" class="form-control" value="@Model.MovieVideo" />
+    MovieVideo:<input type="file" name="video" id="video" />
     <br />
     MovieTime:<input type="text" name="MovieTime" id="MovieTime" class="form-control" value="@Model.MovieTime" />
     <br />

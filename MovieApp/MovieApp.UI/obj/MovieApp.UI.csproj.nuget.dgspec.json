@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
+            "Grpc.Core": {
+              "target": "Package",
+              "version": "[2.41.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ssy/m5wryjmqhkbMKwIrGvs73woNGX6DVEdpMRS7ZW+0Mc8He2sUymNWpvXubkwPWHlXVTStVnbHIHRaNOANbg==",
+  "dgSpecHash": "LNY2NinDnpOk2BoV9HhdsFEsBjNKxYrGiM6fLu6DC9AjSy0MZ4YSr+JDCAMp6mknxx434yESCnJbx1ueUNreCg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vakıf Global\\source\\repos\\Movie\\MovieApp\\MovieApp.UI\\MovieApp.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\bootstrap\\5.1.0\\bootstrap.5.1.0.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\Vakıf Global\\.nuget\\packages\\grpc.core\\2.41.1\\grpc.core.2.41.1.nupkg.sha512",
+    "C:\\Users\\Vakıf Global\\.nuget\\packages\\grpc.core.api\\2.41.1\\grpc.core.api.2.41.1.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\jquery\\1.7.0\\jquery.1.7.0.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\jquery.datatables\\1.10.15\\jquery.datatables.1.10.15.nupkg.sha512",

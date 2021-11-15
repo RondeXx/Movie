@@ -315,3 +315,10 @@ C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.pdb
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\MovieApp.UI.genruntimeconfig.cache
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Admin\Add.cshtml.g.cs
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\bin\Debug\net5.0\Grpc.Core.dll
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\bin\Debug\net5.0\Grpc.Core.Api.dll
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\bin\Debug\net5.0\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\bin\Debug\net5.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\bin\Debug\net5.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\bin\Debug\net5.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\bin\Debug\net5.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
