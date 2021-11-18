@@ -7,6 +7,15 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdminPassword" Type="varchar(max)" Nullable="false" />
+    <Property Name="Salt" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Categories">
     <Key>
       <PropertyRef Name="Id" />
@@ -35,6 +44,13 @@
     <Property Name="ContactSubject" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ContactMessage" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="Directors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Guest">
     <Key>
       <PropertyRef Name="Id" />
@@ -51,19 +67,21 @@
     <Property Name="MovieId" Type="int" Nullable="false" />
     <Property Name="ActorId" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="MovieCategories">
+  <EntityType Name="MovieDirectors">
     <Key>
       <PropertyRef Name="MovieId" />
-      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="DirectorsId" />
     </Key>
     <Property Name="MovieId" Type="int" Nullable="false" />
-    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="DirectorsId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Movies">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DirectorId" Type="int" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
     <Property Name="MovieTitle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MovieYear" Type="int" Nullable="false" />
     <Property Name="MovieDescription" Type="nvarchar(max)" Nullable="false" />
@@ -149,27 +167,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MovieCategories_Categories">
-    <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
-    <End Role="MovieCategories" Type="Self.MovieCategories" Multiplicity="*" />
+  <Association Name="FK_MovieDirectors_Directors1">
+    <End Role="Directors" Type="Self.Directors" Multiplicity="1" />
+    <End Role="MovieDirectors" Type="Self.MovieDirectors" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Categories">
+      <Principal Role="Directors">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="MovieCategories">
-        <PropertyRef Name="CategoryId" />
+      <Dependent Role="MovieDirectors">
+        <PropertyRef Name="DirectorsId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MovieCategories_Movies">
+  <Association Name="FK_MovieDirectors_Movies">
     <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
-    <End Role="MovieCategories" Type="Self.MovieCategories" Multiplicity="*" />
+    <End Role="MovieDirectors" Type="Self.MovieDirectors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Movies">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="MovieCategories">
+      <Dependent Role="MovieDirectors">
         <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movies_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+    <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movies">
+        <PropertyRef Name="CategoryId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -199,12 +229,14 @@
   </Association>
   <EntityContainer Name="MovieAppModelStoreContainer">
     <EntitySet Name="Actors" EntityType="Self.Actors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="comments" EntityType="Self.comments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ContactForms" EntityType="Self.ContactForms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Directors" EntityType="Self.Directors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MovieActors" EntityType="Self.MovieActors" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MovieCategories" EntityType="Self.MovieCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovieDirectors" EntityType="Self.MovieDirectors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -225,13 +257,17 @@
       <End Role="Movies" EntitySet="Movies" />
       <End Role="MovieActors" EntitySet="MovieActors" />
     </AssociationSet>
-    <AssociationSet Name="FK_MovieCategories_Categories" Association="Self.FK_MovieCategories_Categories">
-      <End Role="Categories" EntitySet="Categories" />
-      <End Role="MovieCategories" EntitySet="MovieCategories" />
+    <AssociationSet Name="FK_MovieDirectors_Directors1" Association="Self.FK_MovieDirectors_Directors1">
+      <End Role="Directors" EntitySet="Directors" />
+      <End Role="MovieDirectors" EntitySet="MovieDirectors" />
     </AssociationSet>
-    <AssociationSet Name="FK_MovieCategories_Movies" Association="Self.FK_MovieCategories_Movies">
+    <AssociationSet Name="FK_MovieDirectors_Movies" Association="Self.FK_MovieDirectors_Movies">
       <End Role="Movies" EntitySet="Movies" />
-      <End Role="MovieCategories" EntitySet="MovieCategories" />
+      <End Role="MovieDirectors" EntitySet="MovieDirectors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movies_Categories" Association="Self.FK_Movies_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Movies" EntitySet="Movies" />
     </AssociationSet>
     <AssociationSet Name="FK_UserComments_comments" Association="Self.FK_UserComments_comments">
       <End Role="comments" EntitySet="comments" />

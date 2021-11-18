@@ -1,10 +1,12 @@
 ﻿@model MovieApp.Service.Models.Movy
 @{
+    List<MovieApp.Service.Models.Category> categories = ViewBag.Categories;
+    List<MovieApp.Service.Models.Director> directors = ViewBag.Directors;
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<form action="/Admin/Edit" method="post">
+<form action="/Admin/Edit" method="post" enctype="multipart/form-data">
     @Html.HiddenFor(x => x.Id)
     Id:<input type="text" class="form-control" value="@Model.Id" disabled />
     <br />
@@ -12,9 +14,21 @@
     <br />
     MovieDirector:<input type="text" name="MovieDirector" id="MovieDirector" class="form-control" value="@Model.MovieDirector" />
     <br />
-    MovieImage:<input type="file" name="image" id="image" />
+    <select name="CategoryId" class="form-control">
+        @foreach (var item in categories)
+        {
+            <option value="@item.Id">@item.CategoryName</option>
+        }
+    </select>
     <br />
-    MovieVideo:<input type="file" name="video" id="video" />
+    @Html.HiddenFor(x => x.MovieImage)
+    <br />
+    MovieImage:<input type="file" name="image" id="image" class="form-control" />
+    <br />
+    <br />
+    @Html.HiddenFor(x => x.MovieVideo)
+
+    MovieVideo:<input type="file" name="video" id="video" class="form-control" />
     <br />
     MovieTime:<input type="text" name="MovieTime" id="MovieTime" class="form-control" value="@Model.MovieTime" />
     <br />
@@ -27,6 +41,4 @@
 
 
     <button type="submit" value="Update" class="btn btn-info">Update</button>
-
-</form> 
- 
+</form>

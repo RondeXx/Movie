@@ -20,6 +20,8 @@
             <th>Writer</th>
             <th>Delete</th>
             <th>Update</th>
+            <th> Actors</th>
+            <th>Directors</th>
 
         </tr>
     </thead>
@@ -39,6 +41,8 @@
                 <td><b style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">@item.MovieWriter</b></td>
                 <td><a type="submit" value="Delete" class="btn btn-danger" href="/Admin/Delete/@item.Id" />Delete</td>
                 <td><a type="submit" value="Update" class="btn btn-primary" href="/Admin/Edit/@item.Id" />Update</td>
+               <td><a type="submit" value="MovieActorAdd" class="btn btn-success" href="/Admin/MovieActorAdd/@item.Id" />Actors</td>
+               <td><a type="submit" value="MovieDirectorAdd" class="btn btn-success" href="/Admin/MovieDirectorAdd/@item.Id" />Directors</td>
 
             </tr>
 
@@ -503,6 +507,7 @@
             <th>Writer</th>
             <th>Delete</th>
             <th>Update</th>
+            <th>Movie and Actors</th>
         </tr>
     </tfoot>
 </table>

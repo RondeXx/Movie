@@ -19,10 +19,12 @@ namespace MovieApp.Service.Models
         {
             this.comments = new HashSet<comment>();
             this.Actors = new HashSet<Actor>();
-            this.Categories = new HashSet<Category>();
+            this.Directors = new HashSet<Director>();
         }
     
         public int Id { get; set; }
+        public Nullable<int> DirectorId { get; set; }
+        public int CategoryId { get; set; }
         public string MovieTitle { get; set; }
         public int MovieYear { get; set; }
         public string MovieDescription { get; set; }
@@ -33,11 +35,12 @@ namespace MovieApp.Service.Models
         public int MovieCount { get; set; }
         public string MovieVideo { get; set; }
     
+        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comment> comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Actor> Actors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Director> Directors { get; set; }
     }
 }

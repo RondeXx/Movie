@@ -34,23 +34,36 @@ namespace MovieApp.UI.Controllers
         }
         public IActionResult Index()
         {
-
             var result = _context.Movies.ToList();
-
-
-
             return View(result);
         }
+
+
 
         public IActionResult GetIndex(int Id)
         {
             var res = _context.Movies.Find(Id); //res adında degişkenimize find metodu ile ıd degerimizi buldurduk 
 
-            res.MovieCount += 1;
-            _context.SaveChanges();
-
-
+            //res.MovieCount += 1;
+            //_context.SaveChanges();
             return View(res); //ekrana dönsün dedik
+        }
+
+
+
+        public IActionResult GetActor(int Id)
+        {
+            var result = _context.Actors.Find(Id);
+            //actor tablomuzdan gelen ıd bilgisini bul ve bilgilerine eriş ve fil tablosunda hagileri var ise onları listele
+            
+            return View(result);
+        }
+        public IActionResult GetDirector(int Id)
+        {
+            var resul = _context.Directors.Find(Id);
+            //actor tablomuzdan gelen ıd bilgisini bul ve bilgilerine eriş ve fil tablosunda hagileri var ise onları listele
+
+            return View(resul);
         }
 
 
@@ -73,6 +86,8 @@ namespace MovieApp.UI.Controllers
 
             return RedirectToAction("GetIndex", new { Id = c.MovieId });
         }                                           //GetIndex deki Id parametresini buraya çagırıyoruz
+
+
         public IActionResult Help()
         {
             return View();
@@ -97,9 +112,9 @@ namespace MovieApp.UI.Controllers
                 From = receiverMail,
                 Subject = p.ContactSubject,
                 IsBodyHtml = true,
-                Body =p.ContactMessage,
+                Body = p.ContactMessage,
 
-                
+
                 //Attachments = "" dosya eklemek 
             })
             {
@@ -108,7 +123,7 @@ namespace MovieApp.UI.Controllers
                 smtp.Send(mess);
             }
 
-           
+
             _context.ContactForms.Add(p);
             _context.SaveChanges();
 

@@ -1203,6 +1203,15 @@
           }
         }
       },
+      "SimpleCrypto/0.3.30.26": {
+        "type": "package",
+        "compile": {
+          "lib/SimpleCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/SimpleCrypto.dll": {}
+        }
+      },
       "System.CodeDom/4.7.0": {
         "type": "package",
         "compile": {
@@ -4468,6 +4477,18 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "SimpleCrypto/0.3.30.26": {
+      "sha512": "MiKxbgtfyZL9IXI4crb3+sLbjf8uUiVCcc1YvfajlIFlWiCbW+SejXZ2wlp/V9CGcLsYEVft7QvcncooWBAchQ==",
+      "type": "package",
+      "path": "simplecrypto/0.3.30.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/SimpleCrypto.dll",
+        "simplecrypto.0.3.30.26.nupkg.sha512",
+        "simplecrypto.nuspec"
       ]
     },
     "System.CodeDom/4.7.0": {
@@ -8176,6 +8197,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.10",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "MovieApp.Service >= 1.0.0",
+      "SimpleCrypto >= 0.3.30.26",
       "bootstrap >= 5.1.0",
       "jquery.datatables >= 1.10.15"
     ]
@@ -8251,6 +8273,10 @@
             "target": "Package",
             "version": "[5.0.2, )"
           },
+          "SimpleCrypto": {
+            "target": "Package",
+            "version": "[0.3.30.26, )"
+          },
           "bootstrap": {
             "target": "Package",
             "version": "[5.1.0, )"
@@ -8281,5 +8307,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SimpleCrypto 0.3.30.26' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SimpleCrypto",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

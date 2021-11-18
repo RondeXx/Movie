@@ -17,18 +17,14 @@
                         </div>
                         <div class="title-in">
                             <div class="cate">
-                                <!--TODO-->
-                                @foreach (var item2 in item.Categories)
-                                {
-                                    <span class="blue"><a href="#">@item2.CategoryName</a></span>
-                                }
+                                    <span class="blue"><a href="#">@item.Category.CategoryName</a></span>
 
 
 
                             </div>
                             <h6><a href="/Home/GetIndex?Id=@item.Id">@item.MovieTitle</a></h6>  @*/Home/GetIndex?Id=@item.Id "GetIndex içinden ıd adlı parametre gelicek = eşittir bu parametre ıtemın ıd si
                         sayfaya gittigimizde seçili id alıyor ve onla işem yapıyor *@
-                            <p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+                            
                         </div>
                     </div>
                 }

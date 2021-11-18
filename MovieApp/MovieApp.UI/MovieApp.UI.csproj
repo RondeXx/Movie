@@ -212,6 +212,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="SimpleCrypto" Version="0.3.30.26" />
   </ItemGroup>
 
   <ItemGroup>

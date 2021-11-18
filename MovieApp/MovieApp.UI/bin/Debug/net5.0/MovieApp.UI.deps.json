@@ -40,6 +40,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "MovieApp.Service": "1.0.0",
+          "SimpleCrypto": "0.3.30.26",
           "bootstrap": "5.1.0",
           "jquery.datatables": "1.10.15",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -1212,6 +1213,17 @@
             "assetType": "native",
             "fileVersion": "4.6.25512.1"
           }
+        }
+      },
+      "SimpleCrypto/0.3.30.26": {
+        "runtime": {
+          "lib/SimpleCrypto.dll": {
+            "assemblyVersion": "26.0.0.0",
+            "fileVersion": "26.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/SimpleCrypto.dll": {}
         }
       },
       "System.CodeDom/4.7.0": {
@@ -4110,6 +4122,13 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "SimpleCrypto/0.3.30.26": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MiKxbgtfyZL9IXI4crb3+sLbjf8uUiVCcc1YvfajlIFlWiCbW+SejXZ2wlp/V9CGcLsYEVft7QvcncooWBAchQ==",
+      "path": "simplecrypto/0.3.30.26",
+      "hashPath": "simplecrypto.0.3.30.26.nupkg.sha512"
     },
     "System.CodeDom/4.7.0": {
       "type": "package",

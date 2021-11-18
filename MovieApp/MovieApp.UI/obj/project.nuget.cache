@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LNY2NinDnpOk2BoV9HhdsFEsBjNKxYrGiM6fLu6DC9AjSy0MZ4YSr+JDCAMp6mknxx434yESCnJbx1ueUNreCg==",
+  "dgSpecHash": "xjIbznyeBJo4sZoK8h+WIy38+kHxkVFYvfm6c72wGJcG+rf1KvRxTUR0hn+VDDKJ4p0duCcHhhc07ryK2OUTmw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vakıf Global\\source\\repos\\Movie\\MovieApp\\MovieApp.UI\\MovieApp.UI.csproj",
   "expectedPackageFiles": [
@@ -65,6 +65,7 @@
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Vakıf Global\\.nuget\\packages\\simplecrypto\\0.3.30.26\\simplecrypto.0.3.30.26.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\system.codedom\\4.7.0\\system.codedom.4.7.0.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
@@ -141,5 +142,16 @@
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Vakıf Global\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SimpleCrypto 0.3.30.26' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SimpleCrypto",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

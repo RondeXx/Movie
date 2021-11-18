@@ -2,13 +2,19 @@
 <Schema Namespace="MovieAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="MovieAppContext" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Actors" EntityType="MovieAppModel.Actor" />
+    <EntitySet Name="Admins" EntityType="MovieAppModel.Admin" />
     <EntitySet Name="Categories" EntityType="MovieAppModel.Category" />
     <EntitySet Name="comments" EntityType="MovieAppModel.comment" />
     <EntitySet Name="ContactForms" EntityType="MovieAppModel.ContactForm" />
+    <EntitySet Name="Directors" EntityType="MovieAppModel.Director" />
     <EntitySet Name="Guests" EntityType="MovieAppModel.Guest" />
     <EntitySet Name="Movies" EntityType="MovieAppModel.Movy" />
     <EntitySet Name="News" EntityType="MovieAppModel.News" />
     <EntitySet Name="sysdiagrams" EntityType="MovieAppModel.sysdiagram" />
+    <AssociationSet Name="FK_Movies_Categories" Association="MovieAppModel.FK_Movies_Categories">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Movy" EntitySet="Movies" />
+    </AssociationSet>
     <AssociationSet Name="FK_comments_Guest" Association="MovieAppModel.FK_comments_Guest">
       <End Role="Guest" EntitySet="Guests" />
       <End Role="comment" EntitySet="comments" />
@@ -21,8 +27,8 @@
       <End Role="Actor" EntitySet="Actors" />
       <End Role="Movy" EntitySet="Movies" />
     </AssociationSet>
-    <AssociationSet Name="MovieCategories" Association="MovieAppModel.MovieCategories">
-      <End Role="Category" EntitySet="Categories" />
+    <AssociationSet Name="MovieDirectors" Association="MovieAppModel.MovieDirectors">
+      <End Role="Director" EntitySet="Directors" />
       <End Role="Movy" EntitySet="Movies" />
     </AssociationSet>
     <AssociationSet Name="UserComments" Association="MovieAppModel.UserComments">
@@ -38,13 +44,22 @@
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Movies" Relationship="MovieAppModel.MovieActors" FromRole="Actor" ToRole="Movy" />
   </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdminPassword" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Salt" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Movies" Relationship="MovieAppModel.MovieCategories" FromRole="Category" ToRole="Movy" />
+    <NavigationProperty Name="Movies" Relationship="MovieAppModel.FK_Movies_Categories" FromRole="Category" ToRole="Movy" />
   </EntityType>
   <EntityType Name="comment">
     <Key>
@@ -70,6 +85,14 @@
     <Property Name="ContactSubject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ContactMessage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="Director">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Movies" Relationship="MovieAppModel.MovieDirectors" FromRole="Director" ToRole="Movy" />
+  </EntityType>
   <EntityType Name="Guest">
     <Key>
       <PropertyRef Name="Id" />
@@ -85,6 +108,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DirectorId" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
     <Property Name="MovieTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="MovieYear" Type="Int32" Nullable="false" />
     <Property Name="MovieDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -94,9 +119,10 @@
     <Property Name="MovieTime" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="MovieCount" Type="Int32" Nullable="false" />
     <Property Name="MovieVideo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="MovieAppModel.FK_Movies_Categories" FromRole="Movy" ToRole="Category" />
     <NavigationProperty Name="comments" Relationship="MovieAppModel.FK_comments_Movies" FromRole="Movy" ToRole="comment" />
     <NavigationProperty Name="Actors" Relationship="MovieAppModel.MovieActors" FromRole="Movy" ToRole="Actor" />
-    <NavigationProperty Name="Categories" Relationship="MovieAppModel.MovieCategories" FromRole="Movy" ToRole="Category" />
+    <NavigationProperty Name="Directors" Relationship="MovieAppModel.MovieDirectors" FromRole="Movy" ToRole="Director" />
   </EntityType>
   <EntityType Name="News">
     <Key>
@@ -117,6 +143,18 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <Association Name="FK_Movies_Categories">
+    <End Type="MovieAppModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="MovieAppModel.Movy" Role="Movy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movy">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_comments_Guest">
     <End Type="MovieAppModel.Guest" Role="Guest" Multiplicity="1" />
     <End Type="MovieAppModel.comment" Role="comment" Multiplicity="*" />
@@ -145,8 +183,8 @@
     <End Type="MovieAppModel.Actor" Role="Actor" Multiplicity="*" />
     <End Type="MovieAppModel.Movy" Role="Movy" Multiplicity="*" />
   </Association>
-  <Association Name="MovieCategories">
-    <End Type="MovieAppModel.Category" Role="Category" Multiplicity="*" />
+  <Association Name="MovieDirectors">
+    <End Type="MovieAppModel.Director" Role="Director" Multiplicity="*" />
     <End Type="MovieAppModel.Movy" Role="Movy" Multiplicity="*" />
   </Association>
   <Association Name="UserComments">

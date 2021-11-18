@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.IO;
 
 namespace MovieApp.UI.Helpers
@@ -7,14 +8,25 @@ namespace MovieApp.UI.Helpers
     {
         public static string UploadFile(IFormFile file, string path)
         {
-         
 
-            string SavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/" + path, file.FileName);
-            using (var stream = new FileStream(SavePath, FileMode.Create))
+            if (file == null)
             {
-                file.CopyTo(stream);
+                return "";
             }
-            return "/" + path + "/" + file.FileName;
+            else {
+
+                Guid guid = Guid.NewGuid();
+                string ext = Path.GetExtension(file.FileName);
+                string name = guid + ext;
+
+                string SavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/" + path, name);
+                using (var stream = new FileStream(SavePath, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+                return "/" + path + "/" + name;
+
+            }
         }
 
         public static bool DeleteFile(string path)

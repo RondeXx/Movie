@@ -26,9 +26,11 @@ namespace MovieApp.Service.Models
         }
     
         public virtual DbSet<Actor> Actors { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<comment> comments { get; set; }
         public virtual DbSet<ContactForm> ContactForms { get; set; }
+        public virtual DbSet<Director> Directors { get; set; }
         public virtual DbSet<Guest> Guests { get; set; }
         public virtual DbSet<Movy> Movies { get; set; }
         public virtual DbSet<News> News { get; set; }

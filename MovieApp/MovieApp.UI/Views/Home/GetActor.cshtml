@@ -1,0 +1,62 @@
+﻿@model MovieApp.Service.Models.Actor
+@{
+
+    ViewData["Title"] = "GetActor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 0;
+}
+
+
+<div class="hero " style="background: url('../../images/add.jpg'); ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+</div>
+<div style="color:black; text-align:center; margin:10px 0 10px 0;font-size:40px; background-color:#c88100"><b>@Model.Name</b></div>
+
+
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>İmage</th>
+            <th>Title</th>
+            <th>Time</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+
+        @foreach (var item in Model.Movies)
+        {
+            counter++;
+            <tr>
+
+                <td>@counter</td>
+                <td><a href="/Home/GetIndex/@item.Id"><img src="@item.MovieImage" alt="@item.MovieTitle" width="100" height="80" /></a></td>
+                <td>@item.MovieTitle</td>
+                <td>@item.MovieTime</td>
+                <td><a href="/Home/GetIndex/@item.Id" class="item item-2 redbtn fancybox-media hvr-grow">İzle</a></td>
+
+            </tr>
+
+        }
+    </tbody>
+    @*<tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Year</th>
+            <th>Director</th>
+            <th>Writer</th>
+            <th>Delete</th>
+            <th>Update</th>
+            <th>Movie and Actors</th>
+        </tr>
+    </tfoot>*@
+</table>

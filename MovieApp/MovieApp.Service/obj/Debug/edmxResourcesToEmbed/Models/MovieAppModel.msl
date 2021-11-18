@@ -9,6 +9,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="MovieAppModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="MovieAppModel.Category">
         <MappingFragment StoreEntitySet="Categories">
@@ -40,6 +50,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Directors">
+      <EntityTypeMapping TypeName="MovieAppModel.Director">
+        <MappingFragment StoreEntitySet="Directors">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Guests">
       <EntityTypeMapping TypeName="MovieAppModel.Guest">
         <MappingFragment StoreEntitySet="Guest">
@@ -61,6 +79,8 @@
           <ScalarProperty Name="MovieDescription" ColumnName="MovieDescription" />
           <ScalarProperty Name="MovieYear" ColumnName="MovieYear" />
           <ScalarProperty Name="MovieTitle" ColumnName="MovieTitle" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="DirectorId" ColumnName="DirectorId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -94,12 +114,12 @@
         <ScalarProperty Name="Id" ColumnName="ActorId" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="MovieCategories" TypeName="MovieAppModel.MovieCategories" StoreEntitySet="MovieCategories">
+    <AssociationSetMapping Name="MovieDirectors" TypeName="MovieAppModel.MovieDirectors" StoreEntitySet="MovieDirectors">
       <EndProperty Name="Movy">
         <ScalarProperty Name="Id" ColumnName="MovieId" />
       </EndProperty>
-      <EndProperty Name="Category">
-        <ScalarProperty Name="Id" ColumnName="CategoryId" />
+      <EndProperty Name="Director">
+        <ScalarProperty Name="Id" ColumnName="DirectorsId" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="UserComments" TypeName="MovieAppModel.UserComments" StoreEntitySet="UserComments">

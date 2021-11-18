@@ -54,6 +54,9 @@
     <Compile Include="Models\Actor.cs">
       <DependentUpon>MovieAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>MovieAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>MovieAppModel.tt</DependentUpon>
     </Compile>
@@ -61,6 +64,9 @@
       <DependentUpon>MovieAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactForm.cs">
+      <DependentUpon>MovieAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Director.cs">
       <DependentUpon>MovieAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Guest.cs">

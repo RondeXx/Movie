@@ -1,0 +1,43 @@
+﻿@model MovieApp.Service.Models.Movy
+@{
+    ViewData["Title"] = "MovieActorAdd";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+<form action="/Admin/MovieActorAdd" method="post">
+    @Html.HiddenFor(x => x.Id)
+    <div class="form-control">
+
+        <b> <p>Movie Name: @Model.MovieTitle</p></b>
+        <b>Movie İmage:<img src="@Model.MovieImage" alt="@Model.MovieTitle" width="75" height="75" /></b>
+        <br />
+        @foreach (var item in Model.Actors)
+        {
+            <br /><b>@item.Name</b>
+        }
+    </div>
+    <div class="form-control">
+        <select name="ActorsId" class="form-control">
+            @foreach (var item in ViewBag.List)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+
+        </select>
+
+
+    </div>
+    <button type="submit" value="ActorsAdd" class="btn btn-info">Actors Add</button>  
+
+
+</form>
+<br /> 
+<br /> 
+<a href="/Admin/List/" class="btn btn-danger">Back List</a>
+
+
+
+
+
+
