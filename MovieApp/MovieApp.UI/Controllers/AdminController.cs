@@ -114,6 +114,7 @@ namespace MovieApp.UI.Controllers
         }
 
         [HttpPost]
+        
         public IActionResult Add(Movy model, IFormFile image, IFormFile video)
         {
             if (image == null && video == null)

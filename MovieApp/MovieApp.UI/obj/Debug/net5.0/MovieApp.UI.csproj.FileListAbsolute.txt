@@ -327,3 +327,4 @@ C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Admin\MovieActorAdd.cshtml.g.cs
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Admin\MovieDirectorAdd.cshtml.g.cs
 C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\obj\Debug\net5.0\Razor\Views\Home\GetDirector.cshtml.g.cs
+C:\Users\Vakıf Global\source\repos\Movie\MovieApp\MovieApp.UI\bin\Debug\net5.0\web.config

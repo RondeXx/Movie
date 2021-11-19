@@ -23,13 +23,11 @@ namespace MovieApp.Service.Models
         }
     
         public int Id { get; set; }
-        public Nullable<int> DirectorId { get; set; }
         public int CategoryId { get; set; }
         public string MovieTitle { get; set; }
         public int MovieYear { get; set; }
         public string MovieDescription { get; set; }
         public string MovieImage { get; set; }
-        public string MovieDirector { get; set; }
         public string MovieWriter { get; set; }
         public string MovieTime { get; set; }
         public int MovieCount { get; set; }

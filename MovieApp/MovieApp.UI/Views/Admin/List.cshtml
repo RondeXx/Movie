@@ -37,7 +37,16 @@
                 <td><b style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">@item.MovieTitle</b></td>
                 <td><img src="@item.MovieImage" alt="" width="200" height="200" /></td>
                 <td><b style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">@item.MovieYear</b></td>
-                <td><b style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">@item.MovieDirector</b></td>
+
+                <td>
+                    @foreach (var xyz in item.Directors)
+                    {
+
+                    
+                <b style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">@xyz.Name</b>
+                }
+                </td>
+
                 <td><b style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">@item.MovieWriter</b></td>
                 <td><a type="submit" value="Delete" class="btn btn-danger" href="/Admin/Delete/@item.Id" />Delete</td>
                 <td><a type="submit" value="Update" class="btn btn-primary" href="/Admin/Edit/@item.Id" />Update</td>

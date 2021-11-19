@@ -80,13 +80,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DirectorId" Type="int" />
     <Property Name="CategoryId" Type="int" Nullable="false" />
     <Property Name="MovieTitle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MovieYear" Type="int" Nullable="false" />
     <Property Name="MovieDescription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MovieImage" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="MovieDirector" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MovieWriter" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MovieTime" Type="nvarchar(max)" Nullable="false" />
     <Property Name="MovieCount" Type="int" Nullable="false" />

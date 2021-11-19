@@ -74,13 +74,11 @@
           <ScalarProperty Name="MovieCount" ColumnName="MovieCount" />
           <ScalarProperty Name="MovieTime" ColumnName="MovieTime" />
           <ScalarProperty Name="MovieWriter" ColumnName="MovieWriter" />
-          <ScalarProperty Name="MovieDirector" ColumnName="MovieDirector" />
           <ScalarProperty Name="MovieImage" ColumnName="MovieImage" />
           <ScalarProperty Name="MovieDescription" ColumnName="MovieDescription" />
           <ScalarProperty Name="MovieYear" ColumnName="MovieYear" />
           <ScalarProperty Name="MovieTitle" ColumnName="MovieTitle" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-          <ScalarProperty Name="DirectorId" ColumnName="DirectorId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

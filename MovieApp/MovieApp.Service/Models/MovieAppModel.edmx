@@ -85,13 +85,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DirectorId" Type="int" />
           <Property Name="CategoryId" Type="int" Nullable="false" />
           <Property Name="MovieTitle" Type="nvarchar(max)" Nullable="false" />
           <Property Name="MovieYear" Type="int" Nullable="false" />
           <Property Name="MovieDescription" Type="nvarchar(max)" Nullable="false" />
           <Property Name="MovieImage" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="MovieDirector" Type="nvarchar(max)" Nullable="false" />
           <Property Name="MovieWriter" Type="nvarchar(max)" Nullable="false" />
           <Property Name="MovieTime" Type="nvarchar(max)" Nullable="false" />
           <Property Name="MovieCount" Type="int" Nullable="false" />
@@ -395,13 +393,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DirectorId" Type="Int32" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
           <Property Name="MovieTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MovieYear" Type="Int32" Nullable="false" />
           <Property Name="MovieDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MovieImage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MovieDirector" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MovieWriter" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MovieTime" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MovieCount" Type="Int32" Nullable="false" />
@@ -557,13 +553,11 @@
                 <ScalarProperty Name="MovieCount" ColumnName="MovieCount" />
                 <ScalarProperty Name="MovieTime" ColumnName="MovieTime" />
                 <ScalarProperty Name="MovieWriter" ColumnName="MovieWriter" />
-                <ScalarProperty Name="MovieDirector" ColumnName="MovieDirector" />
                 <ScalarProperty Name="MovieImage" ColumnName="MovieImage" />
                 <ScalarProperty Name="MovieDescription" ColumnName="MovieDescription" />
                 <ScalarProperty Name="MovieYear" ColumnName="MovieYear" />
                 <ScalarProperty Name="MovieTitle" ColumnName="MovieTitle" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-                <ScalarProperty Name="DirectorId" ColumnName="DirectorId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
