@@ -35,6 +35,7 @@ namespace MovieApp.UI.Controllers
         public IActionResult Index()
         {
             var result = _context.Movies.ToList();
+
             return View(result);
         }
 
