@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="938af1e10f9e48a69673ff33c499faab" Name="Diagram1">
-        <EntityTypeShape EntityType="MovieAppModel.Actor" Width="1.5" PointX="0.75" PointY="3.625" />
+        <EntityTypeShape EntityType="MovieAppModel.Actor" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="MovieAppModel.Admin" Width="1.5" PointX="2.75" PointY="7.25" />
-        <EntityTypeShape EntityType="MovieAppModel.Category" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MovieAppModel.Category" Width="1.5" PointX="0.75" PointY="3.625" />
         <EntityTypeShape EntityType="MovieAppModel.comment" Width="1.5" PointX="5.25" PointY="3" />
         <EntityTypeShape EntityType="MovieAppModel.ContactForm" Width="1.5" PointX="4.75" PointY="7.25" />
         <EntityTypeShape EntityType="MovieAppModel.Director" Width="1.5" PointX="0.75" PointY="6.375" />

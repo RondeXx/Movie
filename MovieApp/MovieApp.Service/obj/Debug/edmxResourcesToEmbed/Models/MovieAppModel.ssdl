@@ -130,7 +130,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_comments_Movies">
-    <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+    <End Role="Movies" Type="Self.Movies" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="comments" Type="Self.comments" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Movies">
@@ -154,7 +156,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_MovieActors_Movies">
-    <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+    <End Role="Movies" Type="Self.Movies" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="MovieActors" Type="Self.MovieActors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Movies">
@@ -178,7 +182,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_MovieDirectors_Movies">
-    <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+    <End Role="Movies" Type="Self.Movies" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="MovieDirectors" Type="Self.MovieDirectors" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Movies">
@@ -190,7 +196,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Movies_Categories">
-    <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+    <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Categories">

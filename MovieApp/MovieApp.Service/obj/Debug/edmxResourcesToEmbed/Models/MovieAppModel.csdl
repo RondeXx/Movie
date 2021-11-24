@@ -142,7 +142,9 @@
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_Movies_Categories">
-    <End Type="MovieAppModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="MovieAppModel.Category" Role="Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="MovieAppModel.Movy" Role="Movy" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Category">
@@ -166,7 +168,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_comments_Movies">
-    <End Type="MovieAppModel.Movy" Role="Movy" Multiplicity="1" />
+    <End Type="MovieAppModel.Movy" Role="Movy" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="MovieAppModel.comment" Role="comment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Movy">
