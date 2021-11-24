@@ -8,7 +8,12 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\Vakıf Global\\source\\repos\\Movie\\MovieApp\\MovieApp.Service\\MovieApp.Service.csproj",
         "projectName": "MovieApp.Service",
-        "projectPath": "C:\\Users\\Vakıf Global\\source\\repos\\Movie\\MovieApp\\MovieApp.Service\\MovieApp.Service.csproj"
+        "projectPath": "C:\\Users\\Vakıf Global\\source\\repos\\Movie\\MovieApp\\MovieApp.Service\\MovieApp.Service.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
       },
       "frameworks": {
         "net472": {}
@@ -23,8 +28,12 @@
         "packagesPath": "C:\\Users\\Vakıf Global\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Vakıf Global\\source\\repos\\Movie\\MovieApp\\MovieApp.UI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Vakıf Global\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,7 +122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
